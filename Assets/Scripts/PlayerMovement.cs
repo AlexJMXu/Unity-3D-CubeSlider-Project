@@ -11,6 +11,12 @@ public class PlayerMovement : MonoBehaviour {
 	private bool moveRight = false;
 	private bool moveLeft = false;
 
+	private GameManager gameManager;
+
+	void Start() {
+		gameManager = GameManager.instance;
+	}
+
 	void Update() {
 		if (Input.GetKey("d")) moveRight = true;
 		else moveRight = false;
@@ -25,5 +31,9 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (moveRight) rb.AddForce(sidewayForce * Time.fixedDeltaTime, 0, 0, ForceMode.VelocityChange);
 		if (moveLeft) rb.AddForce(-sidewayForce * Time.fixedDeltaTime, 0, 0, ForceMode.VelocityChange);
+	
+		if (rb.position.y < -1f) {
+			gameManager.EndGame();
+		}
 	}
 }
