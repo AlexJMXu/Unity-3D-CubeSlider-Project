@@ -9,10 +9,16 @@ public class GameManager : MonoBehaviour {
 
 	private bool gameHasEnded = false;
 
+	public GameObject completeLevelUI;
+
 	void Awake() {
 		if (instance == null) {
 			instance = this;
 		}
+	}
+
+	public void CompleteLevel() {
+		completeLevelUI.SetActive(true);
 	}
 
 	public void EndGame() {
