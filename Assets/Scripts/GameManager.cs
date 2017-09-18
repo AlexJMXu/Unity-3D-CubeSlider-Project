@@ -32,4 +32,10 @@ public class GameManager : MonoBehaviour {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
+
+	void myFunction() {
+		int variableOne = 1;
+
+		return VariableOne;
+	}
 }

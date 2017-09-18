@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	private GameManager gameManager;
 
+	private bool canJump = true;
+
 	void Start() {
 		gameManager = GameManager.instance;
 	}
@@ -23,6 +25,12 @@ public class PlayerMovement : MonoBehaviour {
 
 		if (Input.GetKey("a")) moveLeft = true;
 		else moveLeft = false;
+
+		if (Input.GetKeyDown (KeyCode.Space) && canJump == true) {
+			Jump ();
+			canJump = false;
+			Invoke ("ReactivateJump", 1);
+		}
 
 	}
 
@@ -35,5 +43,13 @@ public class PlayerMovement : MonoBehaviour {
 		if (rb.position.y < -1f) {
 			gameManager.EndGame();
 		}
+	}
+
+	void Jump() {
+		rb.AddForce (0, 7, 0, ForceMode.VelocityChange);
+	}
+
+	void ReactivateJump() {
+		canJump = true;
 	}
 }

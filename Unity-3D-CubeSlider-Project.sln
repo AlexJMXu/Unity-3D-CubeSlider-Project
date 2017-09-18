@@ -1,7 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{74DF6530-4677-3571-50B4-799846A9FBDE}") = "Unity-3D-CubeSlider-Project", "Assembly-CSharp.csproj", "{F678E203-FB26-B66B-4192-EDE29DCC1898}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity-3D-CubeSlider-Project", "Assembly-CSharp.csproj", "{F678E203-FB26-B66B-4192-EDE29DCC1898}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
